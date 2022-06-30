@@ -30,7 +30,7 @@ const Login = () => {
                     </div>
                     <div>
                         <label for='password'><LockIcon /></label>
-                        <input type='text' id='password' {...register('password', { required: "Enter your password" })} placeholder="Password" />
+                        <input type='password' id='password' {...register('password', { required: "Enter your password" })} placeholder="Password" />
                         <p>{errors.password?.message}</p>
                     </div>
                     <button onClick={handleSubmit}>Sign-In</button>
