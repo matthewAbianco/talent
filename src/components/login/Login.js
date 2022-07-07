@@ -25,12 +25,12 @@ const Login = () => {
                 })}>
                     <div>
                         <label for='username'><PersonOutlineIcon /></label>
-                        <input type='text' id='username' {...register('username', { required: "Enter your username" })} placeholder="Username" />
+                        <input type='text' id='username' {...register('username', { required: true, message: "Enter your username" })} placeholder="Username" />
                         <p>{errors.username?.message}</p>
                     </div>
                     <div>
                         <label for='password'><LockIcon /></label>
-                        <input type='password' id='password' {...register('password', { required: "Enter your password" })} placeholder="Password" />
+                        <input type='password' id='password' {...register('password', { required: true, message: "Enter your password" })} placeholder="Password" />
                         <p>{errors.password?.message}</p>
                     </div>
                     <button onClick={handleSubmit}>Sign-In</button>
