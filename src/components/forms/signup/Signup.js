@@ -214,7 +214,7 @@ const Signup = () => {
                                 required: true,
                                 message: "Tell peope about yourself"
                             })}
-                        placeholder='Tell people about yourself.' rows='4' cols='40' maxLength={500} ></textarea>
+                        placeholder='Tell people about yourself.' rows='4' cols='40' minLength='1' maxLength='500' ></textarea>
                     <p>{errors.about?.message}</p>
                 </div>
 

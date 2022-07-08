@@ -18,7 +18,7 @@ import 'react-datetime-range-super-picker/dist/index.css'
 
 const JobPost = () => {
 
-    const [currency, setCurrency] = useState('asdf')
+    const [currency, setCurrency] = useState('Select Currency')
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -110,9 +110,6 @@ const JobPost = () => {
                                 <MenuItem onClick={() => setCurrency(<img src={Rupee} alt="" />)}><img src={Rupee} alt="" /> </MenuItem>
                                 <MenuItem onClick={() => setCurrency(<img src={Yen} alt="" />)}><img src={Yen} alt="" /> </MenuItem>
                                 <MenuItem onClick={() => setCurrency(<img src={Yuan} alt="" />)}><img src={Yuan} alt="" /> </MenuItem>
-
-
-
                             </Menu>
                         </div>
                     </div >
@@ -124,6 +121,18 @@ const JobPost = () => {
                                 message: 'Please enter the city you are from'
                             })} placeholder="City" />
                     <p>{errors.location?.message}</p>
+                    <textarea
+                        {...register(
+                            'proposalMessage',
+                            {
+                                required: true,
+                                pattern: {
+                                    value: /^([A-Za-z!.?,/&0-9]{1,500})$/,
+                                    message: 'What are you looking to accomplish with this project?'
+                                }
+                            })} placeholder="Notes about the job." rows='4' cols='50' minLength='1' maxLength='500'
+                    />
+                    <p>{errors.proposalMessage?.message}</p>
                 </div>
                 <button onClick={handleSubmit}>Submit</button>
             </form>
