@@ -40,33 +40,15 @@ const userSchema = new Schema({
 
     joinedDate: {
         type: Date,
-        default: Date.now
+        default: Date.now,
     },
 
-    instagram: {
-        type: String,
-        trim: true
-    },
-
-    facebook: {
-        type: String,
-        trim: true
-    },
-
-    twitter: {
-        type: String,
-        trim: true
-    },
-
-    myspace: {
-        type: String,
-        trim: true
-    },
-
-    tiktok: {
-        type: String,
-        trim: true
-    },
+    socialMedia: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'SocialMedia'
+        }
+    ],
 
     personalWebsite: {
         type: String,

@@ -11,17 +11,13 @@ const servicesSchema = new Schema({
     cost: {
         type: Number,
         required: true,
-
     },
-
-    // length
 
     jobLength: {
         type: Number,
         required: true
     },
 
-    // details about service
     jobDetails: {
         type: String,
         required: true
