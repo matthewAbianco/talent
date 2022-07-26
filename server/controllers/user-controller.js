@@ -37,6 +37,8 @@ const userController = {
         User.create(body)
             .then(dbUserData => res.json(dbUserData))
             .catch(err => res.status(400).json(err))
+
+        console.log(body)
     },
 
     // update User by ID
@@ -63,6 +65,7 @@ const userController = {
                     return
                 }
                 res.json(dbUserData)
+                console.log(params)
             })
             .catch(err => res.status(400).json(err))
     }
