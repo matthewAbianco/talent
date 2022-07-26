@@ -32,6 +32,11 @@ const userSchema = new Schema({
     },
     // photo of user
 
+    userPhoto: {
+        type: String,
+        required: true
+    },
+
     phoneNumber: {
         type: Number,
         required: true,
@@ -71,21 +76,39 @@ const userSchema = new Schema({
         unique: true,
     },
 
-    services: {
+    services: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Services'
+        }
+    ],
 
-        // 30, 60, 90 and 2 hour style service card information
+    reviews: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Review'
+        }
+    ],
 
-    },
 
     speciality: {
-
-        // type of photography or service that they specialize in 
-
+        type: String,
+        enum: ['kids', 'food', 'architecture', 'landscape', 'movie', 'wedding', 'Portrait',
+            'sports', 'concerts', 'live shows', 'family'
+        ]
     },
 
     // photos of work
 
+    workPhotos: {
+        type: String
+    },
+
     // videos of work
+
+    workVideos: {
+        type: String
+    }
 })
 
 // set up pre-save middleware to create password
