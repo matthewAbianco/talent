@@ -91,6 +91,8 @@ const userSchema = new Schema({
     ],
 
 
+    // same skill set as in job model
+
     speciality: {
         type: String,
         enum: ['kids', 'food', 'architecture', 'landscape', 'movie', 'wedding', 'Portrait',

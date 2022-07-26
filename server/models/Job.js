@@ -9,31 +9,55 @@ const jobSchema = new Schema({
 
     },
 
-    // location
+    location: {
+        type: String,
+        required: true,
+        trim: true
+    },
 
-    // pay
-
-    // date and time posted
+    jobPay: {
+        type: Number,
+        required: true
+    },
 
     createdAt: {
         type: Date,
         default: Date.now
     },
 
-    // number of people needed
+    peopleNeeded: {
+        type: Number,
+        required: true
+    },
 
-    // skillset desired
+    // same skill set as in user model
 
-    // job length
+    jobSpeciality: {
+        type: String,
+        enum: ['kids', 'food', 'architecture', 'landscape', 'movie', 'wedding', 'Portrait',
+            'sports', 'concerts', 'live shows', 'family'
+        ]
+    },
 
-    // name of employer/ business
+    jobLength: {
+        type: Number,
+        required: true
+    },
 
-    // license/certification desired
+    jobOwner: {
+        type: String,
+        required: true
+    },
 
-    // experience/education
+    certification: {
+        type: String,
+        required: true
+    },
 
-    // job tags for search feature filter
-
+    jobExperience: {
+        type: String,
+        required: true
+    }
 
 })
 
