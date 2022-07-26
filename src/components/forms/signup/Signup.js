@@ -32,7 +32,7 @@ const Signup = () => {
             const lowercaseRegExp = /(?=.*?[a-z])/;
             const digitsRegExp = /(?=.*?[0-9])/;
             const specialCharRegExp = /(?=.*?[#?!@$%^&*-])/;
-            const minLengthRegExp = /.{8,}/;
+            const minLengthRegExp = /.{8,20}/;
 
             const passwordLength = passwordInputValue.length;
             const uppercasePassword = uppercaseRegExp.test(passwordInputValue);
