@@ -73,4 +73,4 @@ const jobController = {
 
 
 
-module.exports = userController;
+module.exports = jobController;

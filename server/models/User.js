@@ -7,14 +7,12 @@ const userSchema = new Schema({
     firstName: {
         type: String,
         required: true,
-        unique: true,
         trim: true
     },
 
     lastName: {
         type: String,
         required: true,
-        unique: true,
         trim: true
     },
 
@@ -71,7 +69,6 @@ const userSchema = new Schema({
     creditCard: {
         type: Number,
         required: true,
-        unique: true,
     },
 
     services: [
