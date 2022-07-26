@@ -4,7 +4,6 @@ const { DateTimePicker } = require('react-datetime-range-super-picker');
 
 const userSchema = new Schema({
 
-
     firstName: {
         type: String,
         required: true,
@@ -30,7 +29,6 @@ const userSchema = new Schema({
         type: String,
         required: true
     },
-    // photo of user
 
     userPhoto: {
         type: String,
@@ -100,33 +98,32 @@ const userSchema = new Schema({
         ]
     },
 
-    // photos of work
-
     workPhotos: {
         type: String
     },
-
-    // videos of work
 
     workVideos: {
         type: String
     }
 })
 
-// set up pre-save middleware to create password
-userSchema.pre('save', async function (next) {
-    if (this.isNew || this.isModified('password')) {
-        const saltRounds = 10;
-        this.password = await bcrypt.hash(this.password, saltRounds);
-    }
+// USER PASSWORD NOT SET UP YET
 
-    next();
-});
 
-// compare the incoming password with the hashed password
-userSchema.methods.isCorrectPassword = async function (password) {
-    return bcrypt.compare(password, this.password);
-};
+// // set up pre-save middleware to create password
+// userSchema.pre('save', async function (next) {
+//     if (this.isNew || this.isModified('password')) {
+//         const saltRounds = 10;
+//         this.password = await bcrypt.hash(this.password, saltRounds);
+//     }
+
+//     next();
+// });
+
+// // compare the incoming password with the hashed password
+// userSchema.methods.isCorrectPassword = async function (password) {
+//     return bcrypt.compare(password, this.password);
+// };
 
 
 const User = model('User', userSchema)
