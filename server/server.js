@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const dotenv = require('dotenv').config()
 const connectDB = require('./config/dbConn')
+const MONGODB = 'mongodb+srv://admin:admin@cluster0.dvs6pai.mongodb.net/?retryWrites=true&w=majority'
 
 const app = express()
 const PORT = process.env.PORT || 9000

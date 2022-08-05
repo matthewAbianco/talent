@@ -6,36 +6,40 @@ const userSchema = new Schema({
 
     firstName: {
         type: String,
-        required: true,
+        // required: true,
         trim: true
     },
 
     lastName: {
         type: String,
-        required: true,
+        // required: true,
         trim: true
     },
 
     email: {
         type: String,
-        required: true,
+        // required: true,
         unique: true,
         match: [/.+@.+\..+/, 'Must match an email address!']
     },
 
     password: {
         type: String,
-        required: true
+        // required: true
+    },
+
+    equipment: {
+        type: String
     },
 
     userPhoto: {
         type: String,
-        required: true
+        // required: true
     },
 
     phoneNumber: {
         type: Number,
-        required: true,
+        // required: true,
         unique: true
     },
 
@@ -68,7 +72,7 @@ const userSchema = new Schema({
 
     creditCard: {
         type: Number,
-        required: true,
+        // required: true,
     },
 
     services: [
@@ -102,6 +106,11 @@ const userSchema = new Schema({
     workVideos: {
         type: String
     }
+
+    // hourly, daily, weekly pay rate??
+
+    //
+
 })
 
 // USER PASSWORD NOT SET UP YET
